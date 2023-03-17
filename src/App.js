@@ -80,20 +80,20 @@ function TicTacToe() {
       {/*React reads the first truthy value */}
       <Personal name={updatedName || name} onNameChange={handleNameChange}/>
       </div>
-    <div className='buttons'>
-      <div className='flexible'>
-        <button className='btn'
-        onClick={handleClick}> {name} Favourite Users</button>
-        {isShown && <Table users={users || null} onRemove={handleRemove}/>}
-      </div> 
-      <div className='flexible'>
-      <button className='btn'
-      onClick={handleBtnClick}> personal info</button>
-      {btnIsShown && <Personal name={updatedName || name} onNameChange={handleNameChange}/>}
-      </div>    
+        <div className='buttons'>
+           <div className='flexible'>
+                <button className='btn'
+                onClick={handleClick}> {name} Favourite Users</button>
+                {isShown && <Table users={users || null} onRemove={handleRemove}/>}
+            </div> 
+            <div className='flexible'>
+                <button className='btn'
+                onClick={handleBtnClick}> personal info</button>
+                {btnIsShown && <Personal name={updatedName || name} onNameChange={handleNameChange}/>}
+            </div>    
+        </div>
+     </div>
     </div>
-  </div>
-  </div>
   <div className='footer'>
   <h3>{new Date().toLocaleDateString()} {new Date().toLocaleTimeString()}</h3>
   </div>
