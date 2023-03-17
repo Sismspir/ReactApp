@@ -13,6 +13,7 @@ function TicTacToe() {
   const [updatedName, setUpdatedName] = useState();
   const [selectedUser, setSelectedUser] = useState(null);
   const [users , setUsers] = useState([]);
+  const [tempUsers , setTempUsers] = useState([]);
 
 
   useEffect(() => {
@@ -56,9 +57,12 @@ function TicTacToe() {
   }, [users]);
 
   const handleRemove = (id) => {
+    var my_id = id
+    fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => response.json())
+    .then(data => setTempUsers(data));
+    alert(`You deleted: ${tempUsers.find(u => u.id === my_id).name}`)
     setUsers(users.filter((users) => users.id !== id));
-    console.log(id)
-    alert(`You deleted: ${users[id].name}`)
     };
 
   return (
